@@ -65,6 +65,11 @@ jobs:
         sudo apt-get -y install gcc-aarch64-linux-gnu libc6-dev-arm64-cross
         chmod +x ./build.sh
         ./build.sh -r b
+    - name: Upload binary files (windows_386)
+      uses: actions/upload-artifact@v2
+      with:
+        name: cloudreve_windows_386
+        path: release/cloudreve*windows_386.*
 
     - name: Upload binary files (windows_amd64)
       uses: actions/upload-artifact@v2
